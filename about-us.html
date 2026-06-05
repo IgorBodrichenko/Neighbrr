@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Us - Neighbrr</title>
+<meta name="description" content="Why we built Neighbrr and the story behind helping neighbors find trusted local contractors." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0f172a;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #ea580c;
+    --accent-dark: #c2440a;
+    --line: rgba(255, 255, 255, 0.08);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade { animation: fadeUp 0.7s ease forwards; }
+  .fade-1 { animation: fadeUp 0.7s ease 0.1s forwards; opacity: 0; }
+  .fade-2 { animation: fadeUp 0.7s ease 0.2s forwards; opacity: 0; }
+  .fade-3 { animation: fadeUp 0.7s ease 0.35s forwards; opacity: 0; }
+  .fade-4 { animation: fadeUp 0.7s ease 0.5s forwards; opacity: 0; }
+  .fade-5 { animation: fadeUp 0.7s ease 0.65s forwards; opacity: 0; }
+  .fade-6 { animation: fadeUp 0.7s ease 0.8s forwards; opacity: 0; }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+  }
+
+  .top-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 10px 14px;
+    color: var(--muted);
+    transition: 0.2s ease;
+    margin-bottom: 28px;
+  }
+
+  .top-nav:hover {
+    border-color: rgba(234, 88, 12, 0.35);
+    color: #fff;
+    background: rgba(234, 88, 12, 0.08);
+  }
+
+  .logo {
+    margin-bottom: 56px;
+  }
+
+  .tag {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 48px;
+  }
+
+  h1 span {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .story {
+    border-left: 3px solid var(--accent);
+    padding-left: 24px;
+    margin-bottom: 40px;
+  }
+
+  .story-lead {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.55;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  p {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  strong { color: var(--text); }
+
+  .quote-trigger {
+    font-size: 16px;
+    color: var(--accent);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.6;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0;
+  }
+
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin: 40px 0;
+  }
+
+  .pull-1 {
+    background: rgba(234, 88, 12, 0.08);
+    border: 1px solid rgba(234, 88, 12, 0.2);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .pull-1 div {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .pull-1 span { color: var(--accent); }
+
+  .pull-2 {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px 32px;
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .pull-2 div {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .closing-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .closing-note {
+    font-size: 16px;
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .closing-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  .closing-brand span {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-text {
+    font-size: 12px;
+    color: #334155;
+  }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 24px 20px 56px; }
+    .logo svg { width: 100%; height: auto; }
+    .pull-1 div { font-size: 20px; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a href="index.html" class="top-nav fade">← Back to Home</a>
+
+    <div class="logo fade">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" style="height: 42px; width: auto;">
+        <g transform="translate(10,8)">
+          <path d="M60 4C38 4 20 22 20 44C20 72 60 112 60 112C60 112 100 72 100 44C100 22 82 4 60 4Z" fill="#ea580c"/>
+          <circle cx="60" cy="44" r="22" fill="#c2440a" opacity="0.6"/>
+          <g transform="translate(60,44)">
+            <polygon points="0,-14 -13,0 13,0" fill="white" opacity="0.95"/>
+            <rect x="-10" y="0" width="20" height="14" fill="white" opacity="0.95" rx="1"/>
+            <rect x="-4" y="5" width="8" height="9" fill="#c2440a" rx="1"/>
+            <rect x="-9" y="2" width="5" height="5" fill="#c2440a" rx="0.5"/>
+            <rect x="4" y="2" width="5" height="5" fill="#c2440a" rx="0.5"/>
+          </g>
+        </g>
+        <line x1="128" y1="24" x2="128" y2="116" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+        <text x="146" y="82" font-family="Georgia,serif" font-weight="800" font-size="62" fill="#ea580c" letter-spacing="-1">Neighbrr</text>
+        <text x="148" y="108" font-family="Arial,sans-serif" font-weight="600" font-size="15" fill="white" letter-spacing="3" opacity="0.85">DROP A PIN, HELP A NEIGHBRR</text>
+      </svg>
+    </div>
+
+    <div class="tag fade-1">Our Story</div>
+
+    <h1 class="fade-2">
+      Why we built<br />
+      <span>Neighbrr.</span>
+    </h1>
+
+    <div class="story fade-3">
+      <div class="story-lead">It started on an ordinary weekday afternoon.</div>
+      <p>
+        Driving through a neighborhood, bobbing and weaving through landscape trucks parked on both sides of the road - it felt like one at every house. Not because everyone found the best landscaper. But because
+        <strong> nobody knew who their neighbors were using.</strong>
+        Nobody had a way to share it.
+      </p>
+      <p class="quote-trigger">"Imagine if I could simplify that."</p>
+    </div>
+
+    <p class="fade-3">That thought became Neighbrr.</p>
+
+    <div class="divider fade-3"></div>
+
+    <p class="fade-4">
+      Most homeowners have an endless list of things to accomplish around the house - landscaping, snow removal, a new roof, or something as simple as painting one room. Finding the time is stressful enough. Why add to that stress by scrolling through
+      <strong> paid sponsors on Google</strong>, sifting through Angi listings, or posting in a local Facebook group hoping someone responds?
+    </p>
+
+    <p class="fade-4">
+      And if you just moved to a new area? You do not know a single contractor. You do not know who your neighbors trust. You are starting completely from scratch -
+      <span style="color: #ea580c; font-style: italic;"> cold searching</span>
+      strangers and hoping for the best.
+    </p>
+
+    <div class="pull-1 fade-4">
+      <div>
+        The best contractors are not always the ones<br />
+        with the biggest advertising budgets.<br />
+        <span>They are the ones your neighbor already used.</span>
+      </div>
+    </div>
+
+    <p class="fade-5">
+      That knowledge has always existed - it just lived in text messages, backyard conversations, and neighborhood group chats that most people never see.
+      <strong> Neighbrr puts it on a map.</strong>
+    </p>
+
+    <p class="fade-5">
+      Pull up your neighborhood, filter by the trade you need, and browse real verified contractors your actual neighbors have already used. No paid listings. No anonymous reviews. No cold searching. Just your neighbors - real people on your street - vouching for contractors they have already hired and verified.
+    </p>
+
+    <div class="pull-2 fade-5">
+      <div>Real contractors. Real homeowners. Real neighborhoods.</div>
+    </div>
+
+    <div class="fade-6">
+      <p>
+        Trusted contractors who communicate and perform quality work are out there. We built the map to find them. We hope Neighbrr removes the stress of not knowing who to call - and makes finding a great contractor feel less like a gamble and more like asking the neighbor next door.
+      </p>
+
+      <div class="closing-title">
+        Now open that map, drop some pins,<br />
+        and be the good Neighbrr everyone is looking for.
+      </div>
+
+      <div class="closing-note">The Street Champion title is waiting. Go get it.</div>
+
+      <div class="closing-brand">
+        Do not just cold search ... brrrrr.<br />
+        Use <span>Neighbrr.</span>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-text">© 2026 Neighbrr · hello@neighbrr.app · neighbrr.app</div>
+      <div class="footer-text">Neighborhood Approved</div>
+    </footer>
+  </div>
+</body>
+</html>
