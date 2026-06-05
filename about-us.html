@@ -435,7 +435,7 @@
       </svg>
     </a>
     <div class="nav-actions">
-      <a href="index.html" class="nav-back" id="headerBackBtn">← Back</a>
+      <a href="index.html#top" class="nav-back">← Back</a>
       <a href="index.html#waitlist" class="nav-cta">Get Early Access →</a>
     </div>
   </nav>
@@ -554,16 +554,6 @@
   </div>
 
   <script>
-    const backBtn = document.getElementById('headerBackBtn');
-    if (backBtn) {
-      backBtn.addEventListener('click', function (e) {
-        if (window.history.length > 1) {
-          e.preventDefault();
-          window.history.back();
-        }
-      });
-    }
-
     const privacyModal = document.getElementById('privacyModal');
     const privacyCloseBtn = document.getElementById('privacyCloseBtn');
 
