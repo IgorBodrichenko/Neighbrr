@@ -53,9 +53,10 @@
   .fade-6 { animation: fadeUp 0.7s ease 0.8s forwards; opacity: 0; }
 
   .wrap {
-    max-width: 720px;
+    max-width: 1180px;
+    width: min(1180px, calc(100% - 80px));
     margin: 0 auto;
-    padding: 40px 32px 80px;
+    padding: 40px 0 80px;
   }
 
   .top-nav {
@@ -78,6 +79,11 @@
 
   .logo {
     margin-bottom: 56px;
+  }
+
+  .logo svg {
+    height: 76px;
+    width: auto;
   }
 
   .tag {
@@ -230,8 +236,15 @@
   }
 
   @media (max-width: 640px) {
-    .wrap { padding: 24px 20px 56px; }
-    .logo svg { width: 100%; height: auto; }
+    .wrap {
+      width: calc(100% - 40px);
+      padding: 24px 0 56px;
+    }
+    .logo svg {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+    }
     .pull-1 div { font-size: 20px; }
     footer { flex-direction: column; align-items: flex-start; }
   }
@@ -242,7 +255,7 @@
     <a href="index.html" class="top-nav fade">← Back to Home</a>
 
     <div class="logo fade">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" style="height: 42px; width: auto;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140">
         <g transform="translate(10,8)">
           <path d="M60 4C38 4 20 22 20 44C20 72 60 112 60 112C60 112 100 72 100 44C100 22 82 4 60 4Z" fill="#ea580c"/>
           <circle cx="60" cy="44" r="22" fill="#c2440a" opacity="0.6"/>
@@ -255,8 +268,8 @@
           </g>
         </g>
         <line x1="128" y1="24" x2="128" y2="116" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
-        <text x="146" y="82" font-family="Georgia,serif" font-weight="800" font-size="62" fill="#ea580c" letter-spacing="-1">Neighbrr</text>
-        <text x="148" y="108" font-family="Arial,sans-serif" font-weight="600" font-size="15" fill="white" letter-spacing="3" opacity="0.85">DROP A PIN, HELP A NEIGHBRR</text>
+        <text x="146" y="82" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="62" fill="#ea580c" letter-spacing="-1">Neighbrr</text>
+        <text x="148" y="108" font-family="Montserrat, Arial, sans-serif" font-weight="600" font-size="15" fill="white" letter-spacing="3" opacity="0.85">DROP A PIN, HELP A NEIGHBRR</text>
       </svg>
     </div>
 
